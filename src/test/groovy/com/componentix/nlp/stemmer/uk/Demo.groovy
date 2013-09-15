@@ -1,3 +1,5 @@
+package com.componentix.nlp.stemmer.uk
+
 def stemmer = new Stemmer()
 
 int total = 0

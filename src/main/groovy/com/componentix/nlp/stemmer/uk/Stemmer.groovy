@@ -1,3 +1,5 @@
+package com.componentix.nlp.stemmer.uk
+
 import groovy.transform.Field
 
 @Field def word_ends = """
@@ -125,24 +127,3 @@ def replaceStressedVowels(word) {
 
     return word.toLowerCase().collect { nagolos[it] ?: it }.join("")
 }
-
-
-int total = 0
-int matches = 0
-new File("uk_stems.txt").eachLine {
-    if (!it) return;
-
-    def (word, expected) = it.split(",")
-    def stemmed = stem(word)
-    def isMatching = (stemmed == expected)
-    println "${isMatching ? '✓' : '✗'} $word -> $stemmed \t$expected"
-
-    if (isMatching) matches++
-    total++
-}
-
-println "Total words: $total"
-println "Total matches: $matches"
-def accuracy = (float)matches / total * 100
-println "Accuracy: $accuracy%"
-
