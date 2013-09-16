@@ -61,7 +61,7 @@ import groovy.transform.Field
 ]
 
 
-def stem(word) {
+String stem(String word) {
     // normalize word
     word = replaceStressedVowels(word);
 
