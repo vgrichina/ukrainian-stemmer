@@ -3,6 +3,7 @@ apply plugin: "maven"
 
 group = "com.componentix"
 version = "1.0-SNAPSHOT"
+targetCompatibility = "1.6"
 
 repositories {
     mavenCentral()
